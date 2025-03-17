@@ -1,0 +1,126 @@
+[
+   {
+      "id":"88867faf6cc2144e",
+      "type":"tab",
+      "label":"Campahia",
+      "disabled":false,
+      "info":"Quando um interruptor inteligente usado como compahia é acionado, aguarda 2 segundos e desliga o mesmo interruptor.",
+      "env":[
+         
+      ]
+   },
+   {
+      "id":"b72ae46a87046f7b",
+      "type":"server-state-changed",
+      "z":"88867faf6cc2144e",
+      "name":"",
+      "server":"eabd3787.291cd8",
+      "version":6,
+      "outputs":2,
+      "exposeAsEntityConfig":"",
+      "entities":{
+         "entity":[
+            "switch.campahia"
+         ],
+         "substring":[
+            
+         ],
+         "regex":[
+            
+         ]
+      },
+      "outputInitially":false,
+      "stateType":"str",
+      "ifState":"on",
+      "ifStateType":"str",
+      "ifStateOperator":"is",
+      "outputOnlyOnStateChange":true,
+      "for":"2",
+      "forType":"num",
+      "forUnits":"seconds",
+      "ignorePrevStateNull":false,
+      "ignorePrevStateUnknown":false,
+      "ignorePrevStateUnavailable":false,
+      "ignoreCurrentStateUnknown":false,
+      "ignoreCurrentStateUnavailable":false,
+      "outputProperties":[
+         {
+            "property":"payload",
+            "propertyType":"msg",
+            "value":"",
+            "valueType":"entityState"
+         },
+         {
+            "property":"data",
+            "propertyType":"msg",
+            "value":"",
+            "valueType":"eventData"
+         },
+         {
+            "property":"topic",
+            "propertyType":"msg",
+            "value":"",
+            "valueType":"triggerId"
+         }
+      ],
+      "x":310,
+      "y":340,
+      "wires":[
+         [
+            "2ae97c4d1757d742"
+         ],
+         [
+            
+         ]
+      ]
+   },
+   {
+      "id":"2ae97c4d1757d742",
+      "type":"api-call-service",
+      "z":"88867faf6cc2144e",
+      "name":"",
+      "server":"eabd3787.291cd8",
+      "version":7,
+      "debugenabled":false,
+      "action":"switch.turn_off",
+      "floorId":[
+         
+      ],
+      "areaId":[
+         
+      ],
+      "deviceId":[
+         
+      ],
+      "entityId":[
+         "switch.campahia"
+      ],
+      "labelId":[
+         
+      ],
+      "data":"",
+      "dataType":"jsonata",
+      "mergeContext":"",
+      "mustacheAltTags":false,
+      "outputProperties":[
+         
+      ],
+      "queue":"none",
+      "blockInputOverrides":true,
+      "domain":"switch",
+      "service":"turn_off",
+      "x":760,
+      "y":260,
+      "wires":[
+         [
+            
+         ]
+      ]
+   },
+   {
+      "id":"eabd3787.291cd8",
+      "type":"server",
+      "name":"Home Assistant",
+      "addon":true
+   }
+]
